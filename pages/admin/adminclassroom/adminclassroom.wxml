@@ -1,0 +1,89 @@
+<!--pages/admin/adminclassroom/adminclassroom.wxml-->
+<!--添加教室-->
+<view hidden='{{!active}}'>
+    <view style="height:10rpx"></view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="section" style="position:fixed;top:70rpx;right:40rpx;">
+            <view class="section__title">添加者姓名:</view>
+            <view class='form-group'>
+                <input type="text" class="input-text" name="username" placeholder="请输入您的姓名" />
+            </view>    
+        </view>
+        <view class="section" style="position:fixed;top:140rpx;right:40rpx;" >
+            <view class="section__title">添加教室:</view>
+            <view class='form-group'>
+                <input type="text" class="input-text" name="classroomId" placeholder="如：3302" />
+            </view>    
+        </view>
+        <view class="section" style="position:fixed;top:210rpx;right:40rpx;">
+            <view class="section__title">选择部门:</view>
+            <view class='form-group'>
+                <radio-group name="gender">
+                  <label style="font-size: 8.5pt;"><radio value="教务部" />教务部</label>
+                  <label style="font-size: 8.5pt;"><radio value="学工部"/>学工部</label>
+                  <label style="font-size: 8.5pt;"><radio value="网络中心"/>网络中心</label>
+                </radio-group>
+            </view>    
+        </view>
+        <view class="section section_gap" style="position:fixed;top:280rpx;right:40rpx;">
+            <view class="section__title">选择楼号:</view>
+            <picker  bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="floorId">
+            <view class="picker" style="position:fixed;right:40rpx;height:0.5px;">
+                <view style="position:fixed;top:410rpx;right:245rpx;height:0.5px;">{{array[index]}}</view>
+            </view>
+            </picker>
+        </view>
+        <view style="position:fixed;bottom:20%;right:5%;" class="section btn-area">
+            <button class="search" formType="submit">提交</button>
+            <button class="search" formType="reset">清空</button>
+        </view>
+    </form>
+     <!-- 黑框提示并消失 -->
+    <toast hidden="{{toast1Hidden}}" bindchange="toast1Change">
+        {{notice_str}}
+    </toast>
+    <!-- 确认框 及 提示框 -->
+    <view class="page__bd">
+        <modal title="确认" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one">
+            确认提交么？
+        </modal>
+        <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">
+            <view> 提示 </view>
+            <view> 清空成功 </view>
+        </modal>
+    </view>
+</view>
+<!--移除教室-->
+<view hidden="{{active}}">
+    <view class="page">
+      <view class="schedule-wrap" wx:for="{{array1}}">
+        <view class="s-item" bindtouchend="onRemoved" >
+            <view class="s-title">{{item.floor}}</view>
+            <view class="s-loc">{{item.classroomId}}</view>
+            <view class="s-details" >
+                <view class="li-reserve" style="top:11rpx;" bindtap="removeClassroom" data-text="{{index}}">移除</view>
+            </view>
+        </view>
+      </view>
+    </view>
+</view>
+<!--底部导航--> 
+<view class="tab-bar" style="color:#9E9E9E;position:fixed; bottom:0;width: 750rpx;background:#fff;border-top:solid 1px #ccc;"> 
+<view class="container">   
+  <block >    
+    <view bindtap="addClassroom" class="menu-item" style="margin-left:75rpx;">    
+      <image src="/images/manage.png" wx:if="{{active}}" class="img"></image>    
+      <image src="/images/manage1.png" wx:if="{{!active}}" class="img"></image>  
+      <text>添加教室</text>    
+    </view>    
+  </block>  
+  <block >    
+    <view bindtap="deleteClassroom" class="menu-item" style="margin-right:75rpx;">    
+      <image src="/images/manage.png" wx:if="{{!active}}" class="img"></image>    
+      <image src="/images/manage1.png" wx:if="{{active}}" class="img"></image>  
+      <text>移除教室</text>    
+    </view>  
+  </block>
+</view>
+</view>
+

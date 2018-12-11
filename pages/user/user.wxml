@@ -1,0 +1,33 @@
+<view class="page">
+	<view class="user">
+    <view>
+      <image class="user-head" src="../../images/peking.jpg"></image>
+    </view>
+		<view class="user-wrap">
+			<view class="item">
+				<view class="item-title">当前用户</view>
+				<view class="item-content">邹宇航</view>
+			</view>
+      <view class="item">
+				<view class="item-title">学号</view>
+				<view class="item-content">1801210778</view>
+			</view>
+			<view class="item">
+				<view class="item-title">邮箱</view>
+				<view class="item-content">zouyuhang@pku.edu.cn</view>
+			</view>
+			<view class="item">
+				<view class="item-title">联系方式</view>
+				<view class="item-content">17729615274</view>
+			</view>
+			<view class="item">
+				<view class="item-title">所在班级/部门</view>
+				<view class="item-content">未名四苑</view>
+			</view>
+		</view>
+		<view class="register-wrap">
+      <button class="jumper">切换账号</button>
+			<button class="warn" class="register" bindtap="loginOut">退出登录</button>
+		</view>
+	</view>
+</view>

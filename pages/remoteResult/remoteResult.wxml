@@ -1,0 +1,41 @@
+<view>
+    <view style="height:35rpx;"></view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="section" style="position:fixed;top:70rpx;right:40rpx;" >
+            <view class="section__title">申请人姓名:</view>
+            <view class='form-group'>
+                <input type="text" class="input-text" name="username" placeholder="请输入您的姓名" />
+            </view>    
+        </view>
+        <view class="section" style="position:fixed;top:140rpx;right:40rpx;">
+            <view class="section__title">联系方式:</view>
+            <view class='form-group'>
+                <input type="text" class="input-text" name="telephonenumber" placeholder="如：18255457334" />
+            </view>    
+        </view>
+        <view class="section" style="position:fixed;top:210rpx;right:40rpx;" >
+            <view class="section__title">预计人数:</view>
+            <view class='form-group'>
+                <input type="text" class="input-text" name="classroomId" placeholder="如：3302" />
+            </view>    
+        </view>
+        <view class="section section_gap" style="position:fixed;top:280rpx;right:40rpx;" >
+            <view class="section__title">申请部门:</view>
+            <picker  bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="floorId" >
+            <view class="picker" style="position:fixed;right:40rpx;height:0.5px;">
+                <view style="position:fixed;top:325rpx;right:245rpx;height:0.5px;">{{array[index]}}</view>
+            </view>
+            </picker>
+        </view>
+        <view class="section section_gap" style="position:fixed;top:350rpx;right:40rpx;" >
+            <view class="section__title">活动简介:</view>
+             <textarea class="input-text" 
+                placeholder="输入您的活动简介" bindblur="bindTextAreaBlur" value="{{details}}"
+                style="position:fixed;top:400rpx;right:40rpx;height:30%;width:62.5%;"> </textarea>
+        </view>
+        <view style="position:fixed;bottom:6%;right:5%;" class="section btn-area">
+            <button class="search" formType="submit">提交</button>
+            <button class="search" formType="reset">清空</button>
+        </view>
+    </form>
+</view>

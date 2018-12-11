@@ -1,0 +1,35 @@
+<!--pages/admin/agree/activityDetail/activityDetail.wxml-->
+<view class="page">
+	<view class="details-wrap">
+		<view class="item">
+			<view class="item-title">举办日期</view>
+			<view class="item-content">{{time}}</view>
+		</view>
+		<view class="item">
+			<view class="item-title">时间</view>
+			<view class="item-content">{{mae}}</view>
+		</view>
+		<view class="item">
+			<view class="item-title">预计人数</view>
+			<view class="item-content">{{number}}</view>
+		</view>
+		<view class="item">
+			<view class="item-title">教室</view>
+			<view class="item-content" style="color: #a3a3a3">{{floor}}{{classroomId}}</view>
+		</view>
+	</view>
+	<view class="details-wrap" style="margin-top: 50rpx;">
+		<view class="item">
+			<view class="item-title">活动主题</view>
+			<view class="item-content" style="color: #a3a3a3">{{theme}}</view>
+		</view>
+		<view class="item">
+			<view class="item-title">活动简介</view>
+			<view class="item-content" style="color: #a3a3a3">{{introduce}}</view>
+		</view>
+	</view>
+  <view class="cancel-wrap">
+    <button class="warn" class="agree" bindtap="agree">同意</button>
+		<button class="warn" class="cancel" bindtap="reject">拒绝</button>
+	</view>
+</view>

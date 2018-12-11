@@ -1,0 +1,62 @@
+<!--pages/booking/booking.wxml-->
+<!--remote.wxml-->
+<view class="page">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="s-time">
+          <picker  class="weui-input" mode="date" bindchange="onChangeSdate" value="{{date}}" start="{{sdate}}" end="2100-01-01" data-sdate="{{sdate}}">
+            {{sdate}}
+          </picker>
+        </view>
+      </view>
+      
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="s-time">
+          <picker class="weui-input" mode="time" value="{{time}}" bindchange="onChangeStime" start="{{stime}}" data-stime="{{stime}}">
+            {{stime}}
+          </picker>
+        </view>
+      </view>
+      <view style="display: inline-block; margin-right: 60rpx;">至</view>
+      <view class="weui-cell__bd">
+        <view class="e-time">
+          <picker class="weui-input" mode="time" value="{{time}}" bindchange="onChangeEtime" start="{{stime}}" data-etime="{{etime}}">
+            {{etime}}
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">楼栋</view>
+      </view>
+      <view class="weui-cell__bd r-dev-wrap">
+        <view id="0" class="r-dev {{currentDev == 0? 'active': ''}}" bindtap="onSelectDev">一号楼</view>
+        <view id="1" class="r-dev {{currentDev == 1? 'active': ''}}" bindtap="onSelectDev">二号楼</view>
+        <view id="2" class="r-dev {{currentDev == 2? 'active': ''}}" bindtap="onSelectDev">三号楼</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">空闲教室</view>
+      </view>
+      <view style="line-height:2.58823529em;">
+        <view id="1" class="r-time {{currentTime == 1? 'active': ''}}" bindtap="onSelectTime">1208</view>
+        <view id="2" class="r-time {{currentTime == 2? 'active': ''}}" bindtap="onSelectTime">3303</view>
+        <view id="3" class="r-time {{currentTime == 3? 'active': ''}}" bindtap="onSelectTime">3302</view>
+        <view id="4" class="r-time {{currentTime == 4? 'active': ''}}" bindtap="onSelectTime">3204</view>
+        <view id="5" class="r-time {{currentTime == 5? 'active': ''}}" bindtap="onSelectTime">3201</view>
+      </view>
+    </view>
+  </view>
+  <button class="search" bindtap="onSearch">申请</button>
+</view>

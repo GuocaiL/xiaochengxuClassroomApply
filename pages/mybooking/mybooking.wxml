@@ -1,0 +1,43 @@
+<!--pages/mybooking/mybooking.wxml-->
+
+<view class="page">
+    <view class="schedule-wrap">
+        <navigator class="s-item" url="../details/details">
+            <view class="s-title">未名四苑读书会</view>
+            <view class="s-loc">1号楼1208</view>
+            <view class="s-time-wrap">
+                <view class="s-ymd">2018-11-30</view>
+                <view class="s-date">12:00-14:30</view>
+            </view>
+            <view class="s-details">
+                <image src="../../images/icon-arrow.png"></image>
+            </view>
+        </navigator>
+        <navigator class="s-item" url="../details/details">
+            <view class="s-title">AI实习就业分享</view>
+            <view class="s-loc">3号楼3204</view>
+            <view class="s-time-wrap">
+                <view class="s-ymd">2018-12-1</view>
+                <view class="s-date">14:00-16:30</view>
+            </view>
+            <view class="s-details">
+                <image src="../../images/icon-arrow.png"></image>
+            </view>
+        </navigator>
+        <navigator class="s-item" url="../details/details">
+            <view class="s-title">博雅一苑素质教育答辩</view>
+            <view class="s-loc">3号楼3303</view>
+            <view class="s-time-wrap">
+                <view class="s-ymd">2018-12-09</view>
+                <view class="s-date">14:00-15:30</view>
+            </view>
+            <view class="s-details">
+                <image src="../../images/icon-arrow.png"></image>
+            </view>
+        </navigator>
+    </view>
+    <navigator class="s-reserve" url="../reserve/reserve">
+        <image src="../../images/add.png"></image>
+    </navigator>
+</view>
+

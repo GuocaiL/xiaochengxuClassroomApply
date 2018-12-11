@@ -1,0 +1,56 @@
+<!--pages/admin/agree/agree.wxml-->
+<!--待审核-->
+<view hidden="{{!active}}">
+  <view class="page">
+    <view class="schedule-wrap" wx:for="{{array1}}">
+        <view class="s-item">
+            <view class="s-title">{{item.theme}}</view>
+            <view class="s-loc">{{item.floor}}{{item.classroomId}}</view>
+            <view class="s-time-wrap">
+                <view class="s-ymd">{{item.time}}</view>
+                <view class="s-date">{{item.mae}}</view>
+            </view>
+            <view class="s-details">
+                <image src="../../../../images/icon-arrow.png" data-text="{{index}}" bindtap="goCheck"></image>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>
+<!--审核历史-->
+<view hidden="{{active}}">
+<view class="page">
+    <view class="schedule-wrap" wx:for="{{array2}}">
+        <view class="s-item">
+            <view class="s-title">{{item.theme}}</view>
+            <view class="s-loc">{{item.floor}}{{item.classroomId}}</view>
+            <view class="s-time-wrap">
+                <view class="s-ymd">{{item.time}}</view>
+                <view class="s-date">{{item.mae}}</view>
+            </view>
+            <view class="s-details">
+                <image src="../../../../images/icon-arrow.png" data-text="{{index}}" bindtap="gohistory"></image>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>
+<!--底部导航--> 
+<view class="tab-bar" style="color:#9E9E9E;position:fixed; bottom:0;width: 750rpx;background:#fff;border-top:solid 1px #ccc;"> 
+<view class="container">   
+  <block >    
+    <view bindtap="waitCheck" class="menu-item" style="margin-left:75rpx;">    
+      <image src="/images/manage.png" wx:if="{{active}}" class="img"></image>    
+      <image src="/images/manage1.png" wx:if="{{!active}}" class="img"></image>  
+      <text>待审核</text>    
+    </view>    
+  </block>  
+  <block >    
+    <view bindtap="historyCheck" class="menu-item" style="margin-right:75rpx;">    
+      <image src="/images/manage.png" wx:if="{{!active}}" class="img"></image>    
+      <image src="/images/manage1.png" wx:if="{{active}}" class="img"></image>  
+      <text>审核历史</text>    
+    </view>  
+  </block>
+</view>
+</view>
